@@ -49,5 +49,9 @@ public class TestBase {
 
         return driver;
     }
-
+    public void CloseDriver(){
+        if (driver!=null){
+            driver.quit();
+        }
+    }
 }

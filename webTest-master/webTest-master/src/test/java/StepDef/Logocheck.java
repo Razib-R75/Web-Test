@@ -20,44 +20,11 @@ public class Logocheck {
         this.driver = testContextSetup.driver;
         this.homepage = testContextSetup.pageObjectManager.getHomePage();
     }
-    public void CloseDriver() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
-
-    @Given("Check sing me up button is available in site section")
-    public void checkSignMeUpButtonIsAvailableInSiteSection() {
-        WebElement signUpButton = homepage.getSingMeUp();
-        Assert.assertTrue("Sign me up button is not available.", signUpButton.isDisplayed());
-
-    }
-
-    @When("Click on sign me up button")
-    public void clickOnSignMeUpButton() {
-        homepage.getSingMeUp().click();
-
-    }
-
-    @And("Click on continue with Google button")
-    public void clickOnContinueWithGoogleButton() throws InterruptedException {
-        homepage.getGoogle().click();
-        Thread.sleep(3000);
-        CloseDriver();
-    }
-
-
-    @And("Click on continue with Apple button")
-    public void clickOnContinueWithAppleButton() {
-        homepage.getApple().click();
-
-    }
 
 
     @Given("Check login button is available in blow")
     public void checkLoginButtonIsAvailable() {
-        WebElement loginButton = homepage.getLogin();
-        Assert.assertTrue("Login button is not available.", loginButton.isDisplayed());
+       homepage.getLogin().isDisplayed();
     }
 
 
@@ -69,14 +36,12 @@ public class Logocheck {
 
     @And("Click on continu with Email button")
     public void clickOnContinueWithEmailButton() {
-        WebElement continueWithEmailButton = homepage.getEmail();
-        continueWithEmailButton.click();
+       homepage.getEmail().click();
     }
 
     @Then("Enter Email in Email text field")
     public void enterEmailInEmailTextField() {
-        WebElement emailTextField = homepage.getemailfild();
-        emailTextField.sendKeys("raz15-4132@diu.edu.bd");
+        homepage.getemailfild().sendKeys("raz15-4132@diu.edu.bd");
     }
 
     @When("Click on next button")
@@ -87,37 +52,22 @@ public class Logocheck {
 
     @Then("Input The Password in Password field")
     public void inputPasswordInPasswordField() {
-        WebElement passwordField = homepage.getpassfile();
-        passwordField.sendKeys("Razib4144#");
+        homepage.getpassfile().sendKeys("Razib4144#");
     }
 
     @When("Click on Log in button")
-    public void clickOnLoginButton() throws InterruptedException {
+    public void clickOnLoginButton(){
         homepage.getLog_in().click();
 
     }
-
-   
-
-    @Given("Check Text Button is available in Display")
-    public void checkTextButtonIsAvailableInDisplay() throws InterruptedException {
-
-        homepage.getTextB().isDisplayed();
-
+    @Then("Show the Home Page is available in Display")
+    public void showTheHomePageIsAvailableInDisplay() throws InterruptedException {
+        homepage.getHomeIcon().isDisplayed();
+        Thread.sleep(2000);
     }
 
-    @When("Click On the Text Button")
-    public void clickOnTheTextButton() throws InterruptedException {
-        Thread.sleep(6000);
-        homepage.getTextB().click();
-    }
 
-    @Then("show the Expolore available is display")
-    public void showTheTitleAvailableIsDisplay() throws InterruptedException {
 
-        Thread.sleep(6000);
-
-    }
 
   
 
@@ -137,39 +87,190 @@ public class Logocheck {
 
     @Then("Show the Activity Page is available in Display")
     public void showTheActivityPageIsAvailableInDisplay() throws InterruptedException {
+
         homepage.getActivity().isDisplayed();
         Thread.sleep(2000);
+
     }
 
-    
-
-    
-
-    @Given("Check the masage button in site")
-    public void checkTheMasageButtonInSite() throws InterruptedException {
-
-        homepage.getMasage().isDisplayed();
-    }
-
-    @When("Click on Massage button")
-    public void clickOnMassageButton() throws InterruptedException {
-        homepage.getMasage().click();
-        Thread.sleep(2000);
-    }
-
-    @Then("Show the inbox are avaolable")
-    public void showTheInboxAreAvaolable() {
-        homepage.getMasage().isDisplayed();
-    }
-
-    @When("Click on again Massage page is  not available in Display")
-    public void clickOnAgainMassagePageIsNotAvailableInDisplay() throws InterruptedException {
-        homepage.getMasage().click();
-        Thread.sleep(2000);
-    }
 
     @Given("show the explore is display")
     public void showTheExploreIsDisplay() {
+        homepage.getExpolore().isDisplayed();
+
+    }
+    @When("Click On the explore Button")
+    public void clickOnTheTextButton() throws InterruptedException {
+        Thread.sleep(2000);
+        homepage.getExpolore().click();
+
+    }
+
+    @Then("show the Expolore available is display")
+    public void showTheExpoloreAvailableIsDisplay() {
+        homepage.getExpolore().isDisplayed();
+
+    }
+
+    @Given("Show Inbox button  is available in site")
+    public void showInboxButtonIsAvailableInSite() {
+        homepage.getInbox().isDisplayed();
+    }
+
+    @When("Click the Inbox button")
+    public void clickTheInboxButton() throws InterruptedException {
+        Thread.sleep(2000);
+        homepage.getInbox().click();
+    }
+
+    @Then("Show the inbox  is available in Display")
+    public void showTheInboxIsAvailableInDisplay() throws InterruptedException {
+        homepage.getInboxmenu().isDisplayed();
+        Thread.sleep(2000);
+    }
+
+    @Given("Show mesage button  is available in site")
+    public void showMssageButtonIsAvailableInSite() throws InterruptedException {
+        homepage.getMessage().isDisplayed();
+        Thread.sleep(2000);
+}
+
+    @When("Click on the message button")
+    public void clickOnTheMessageButton() {
+        homepage.getMessage().click();
+    }
+
+    @Then("Show the message box  is available in Display")
+    public void showTheMessageBoxIsAvailableInDisplay() throws InterruptedException {
+        homepage.getMessageBox().isDisplayed();
+        Thread.sleep(2000);
+    }
+
+    @Given("Show account button  is available in site")
+    public void showAccounButtonIsAvailableInSite() {
+        homepage.getAccount().isDisplayed();
+
+    }
+
+    @When("Click on the account button")
+    public void clickOnTheAccountButton() throws InterruptedException {
+        Thread.sleep(2000);
+        homepage.getAccount().click();
+    }
+
+    @Then("Show the account sub menu is available in Display")
+    public void showTheAccountSubMenuIsAvailableInDisplay() throws InterruptedException {
+        homepage.getLike().isDisplayed();
+        Thread.sleep(2000);
+    }
+
+    @When("Click on the like button")
+    public void clickOnTheLikeButton() {
+        homepage.getLike().click();
+    }
+
+    @Then("show the all post and like")
+    public void showTheAllPostAndLike() throws InterruptedException {
+        homepage.getLikepage().isDisplayed();
+        Thread.sleep(2000);
+
+    }
+
+    @When("Click on the following button")
+    public void clickOnTheFollowingButton() throws InterruptedException {
+
+        Thread.sleep(2000);
+        homepage.getFollow().click();
+    }
+
+    @Then("show the all following page is available in Display")
+    public void showTheAllFollowingPageIsAvailableInDisplay() throws InterruptedException {
+        homepage.getFollowPage().isDisplayed();
+        Thread.sleep(2000);
+    }
+
+    @Given("Show setting button  is available in site")
+    public void showSettingButtonIsAvailableInSite() throws InterruptedException {
+        homepage.getSetting().isDisplayed();
+        Thread.sleep(2000);
+    }
+
+    @When("Click on the setting button")
+    public void clickOnTheSettingButton() {
+        homepage.getSetting().click();
+    }
+
+    @Then("Show the setting is available in Display")
+    public void showTheSettingIsAvailableInDisplay() throws InterruptedException {
+
+        homepage.getSettingPage().isDisplayed();
+        Thread.sleep(2000);
+    }
+
+
+    @Given("Show TumblrMart button  is available in site")
+    public void showTumblrMartButtonIsAvailableInSite() {
+        homepage.getTumblrMart().isDisplayed();
+
+    }
+
+    @When("Click on the TumblrMart button")
+    public void clickOnTheTumblrMartButton() throws InterruptedException {
+        homepage.getTumblrMart().click();
+        Thread.sleep(1500);
+    }
+
+    @Then("Show the TumblrMartis available in Display")
+    public void showTheTumblrMartisAvailableInDisplay() {
+        homepage.getTumblrPage().isDisplayed();
+    }
+
+    @Given("Show Go a domain button  is available in site")
+    public void showGoADomainButtonIsAvailableInSite() {
+        homepage.getGoAadmin().isDisplayed();
+    }
+
+    @When("Click on the Go a domain button")
+    public void clickOnTheGoADomainButton() throws InterruptedException {
+        homepage.getGoAadmin().click();
+        Thread.sleep(2000);
+    }
+
+    @Then("Show the Go a domain is available in Display")
+    public void showTheGoADomainIsAvailableInDisplay() {
+        homepage.getGoAadminPage().isDisplayed();
+    }
+
+    @Given("Show the create button  is available in site")
+    public void showTheCreateButtonIsAvailableInSite() {
+        homepage.getCreate().isDisplayed();
+
+    }
+
+    @When("Click on the create button")
+    public void clickOnTheCreateButton() throws InterruptedException {
+        homepage.getCreate().click();
+        Thread.sleep(2000);
+    }
+
+    @Then("Show the post type is available in Display")
+    public void showThePostTypeIsAvailableInDisplay() {
+        homepage.getCreatePage().isDisplayed();
+    }
+
+    @Given("Show the GoAdd_free button  is available in site")
+    public void showTheGoAdd_freeButtonIsAvailableInSite() {
+        homepage.getAddFree().isDisplayed();
+    }
+
+    @When("Click on the GoAdd_free button")
+    public void clickOnTheGoAdd_freeButton() {
+        homepage.getAddFree().click();
+    }
+
+    @Then("Show the Ad-Free Browsing is available in Display")
+    public void showTheAdFreeBrowsingIsAvailableInDisplay() {
+        homepage.getAddFreePage().isDisplayed();
     }
 }
 
