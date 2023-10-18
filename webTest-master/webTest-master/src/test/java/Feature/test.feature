@@ -47,14 +47,21 @@ Feature: Verify Tumblr works properly
     When  Click on Activity button
     Then Show the Activity Page is available in Display
     When Click on Activity button
-    Then Show the Activity Page is  not available in Display
+
 
   @Release
     Scenario: chack the inbox
-      Given Check the masage button in site
-      When Click on Massage button
-      Then  Show the inbox are avaolable
-      When  Click on again Massage page is  not available in Display
+      Given  Check login button is available in blow
+       When Click On Login button
+       And Click on continu with Email button
+       Then Enter Email in Email text field
+       When Click on next button
+       Then Input The Password in Password field
+       When Click on Log in button
+        Given Check the masage button in site
+       When Click on Massage button
+        Then  Show the inbox are avaolable
+       When  Click on again Massage page is  not available in Display
 
   Scenario Outline:
     Examples:

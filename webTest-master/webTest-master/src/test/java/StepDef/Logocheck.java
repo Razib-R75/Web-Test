@@ -20,7 +20,11 @@ public class Logocheck {
         this.driver = testContextSetup.driver;
         this.homepage = testContextSetup.pageObjectManager.getHomePage();
     }
-
+    public void CloseDriver() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
     @Given("Check sing me up button is available in site section")
     public void checkSignMeUpButtonIsAvailableInSiteSection() {
@@ -36,8 +40,10 @@ public class Logocheck {
     }
 
     @And("Click on continue with Google button")
-    public void clickOnContinueWithGoogleButton() {
+    public void clickOnContinueWithGoogleButton() throws InterruptedException {
         homepage.getGoogle().click();
+        Thread.sleep(3000);
+        CloseDriver();
     }
 
 
@@ -91,10 +97,7 @@ public class Logocheck {
 
     }
 
-    @Then("show the home page is display")
-    public void checkHomePageIsDisplayed() {
-        // Add your code to check if the home page is displayed
-    }
+   
 
     @Given("Check Text Button is available in Display")
     public void checkTextButtonIsAvailableInDisplay() throws InterruptedException {
@@ -116,21 +119,9 @@ public class Logocheck {
 
     }
 
-    @When("Click on the Title")
-    public void clickOnTheTitle() {
-    }
+  
 
-    @Then("Input the Titel")
-    public void inputTheTitel() {
-    }
-
-    @When("Click on the Post Button")
-    public void clickOnThePostButton() {
-    }
-
-    @And("Click On the Post")
-    public void clickOnThePost() {
-    }
+   
 
     @Given("Check Activity is available in site")
     public void checkActivityIsAvailableInSite() throws InterruptedException {
@@ -150,13 +141,9 @@ public class Logocheck {
         Thread.sleep(2000);
     }
 
-    @Then("Show the Activity Page is  not available in Display")
-    public void showTheActivityPageIsNotAvailableInDisplay() {
-    }
+    
 
-    @Given("show the explore is display")
-    public void showTheExploreIsDisplay() {
-    }
+    
 
     @Given("Check the masage button in site")
     public void checkTheMasageButtonInSite() throws InterruptedException {
@@ -179,6 +166,10 @@ public class Logocheck {
     public void clickOnAgainMassagePageIsNotAvailableInDisplay() throws InterruptedException {
         homepage.getMasage().click();
         Thread.sleep(2000);
+    }
+
+    @Given("show the explore is display")
+    public void showTheExploreIsDisplay() {
     }
 }
 

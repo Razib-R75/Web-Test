@@ -74,4 +74,6 @@ public class Homepage {
     public WebElement getActivity(){ return driver.findElement(Activity);}
     public WebElement getMasage(){ return driver.findElement(Masage);}
 
+
+
 }
