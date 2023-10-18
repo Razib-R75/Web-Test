@@ -14,15 +14,30 @@ public class Homepage {
     By singMeUp = By.xpath("//span[contains(text(),'Sign me up \uD83D\uDE4C')]");
     By google = By.xpath("//a[normalize-space()='Continue with Google']");
     By Apple = By.xpath("//a[normalize-space()='Continue with Apple']");
-
     By LoginP = By.xpath("//span[normalize-space()='Log in']");
     By Email = By.xpath("//button[@aria-label='Continue with email']");
     By LoginNext = By.xpath("//body/div[@id='root']/div[@id='base-container']/div[@id='glass-container']/div[@role='dialog']/div[@class='yKniX']/div[@class='hBHAJ tzb9e Rog1D']/div[@class='WAHT_']/div[@class='vVe9A']/div[@class='m4lSb email']/form[@method='post']/div[@class='ehOK3']/div[@class='Kz53t']/button[@aria-label='Next']/span[1]");
     By emailfile = By.xpath("//input[@placeholder='Email']");
-
     By passfild = By.xpath("//input[@placeholder='Password']");
-
     By Log_in = By.xpath("//button[@type='submit']//span[@class='EvhBA'][normalize-space()='Log in']");
+
+    By Expolor = By.xpath("//span[normalize-space()='Explore']");
+
+    By Activity = By.xpath("//span[normalize-space()='Activity']");
+
+    By Masage = By.xpath("//span[normalize-space()='Messages']");
+
+
+
+
+
+
+
+
+
+
+
+
     public WebElement getSingMeUp() {
         return driver.findElement(singMeUp);
     }
@@ -51,7 +66,12 @@ public class Homepage {
     public WebElement getLog_in() {
         return driver.findElement(Log_in);
     }
-    public WebElement getpassfile() {
-        return driver.findElement(passfild);
-    }
+    public WebElement getpassfile() {return driver.findElement(passfild);}
+
+
+    public WebElement getTextB(){ return driver.findElement(Expolor);}
+
+    public WebElement getActivity(){ return driver.findElement(Activity);}
+    public WebElement getMasage(){ return driver.findElement(Masage);}
+
 }
